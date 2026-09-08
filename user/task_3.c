@@ -18,6 +18,7 @@ int main(int argc, char* argv[]){
         close(pipefd[1]);
         char* argv[] = {"/wc", 0};
         exec("/wc", argv);
+        exit(1); // if error
     } else{
         close(pipefd[0]);
         for (int i = 0; i < argc; i++){
