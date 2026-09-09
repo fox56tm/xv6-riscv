@@ -153,6 +153,7 @@ UPROGS=\
 	$U/_sync\
 	$U/_task_1\
 	$U/_test_2_task\
+	$U/_task_3\
 
 fs.img: mkfs/mkfs README $(UPROGS)
 	mkfs/mkfs fs.img README $(UPROGS)

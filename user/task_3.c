@@ -9,7 +9,7 @@ int main(int argc, char* argv[]){
     if(p < 0) exit(1);
 
     int new_p = fork();
-    if(new_p < 0) exit(0);
+    if(new_p < 0) exit(1);
 
     if(new_p == 0){
         close(0);
