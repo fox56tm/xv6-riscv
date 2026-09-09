@@ -12,5 +12,23 @@ int main(int argc, char* argv[]){
     if(new_p < 0) exit(1);
 
     if(new_p == 0){
+        close(pipefd[1]);
+        char buff[1024];
+        for(int i = 0; i <= argc; i++){
+            read(pipefd[0], buff,strlen(argv[i]));
+            printf("%s", buff);
+        }
+        close(pipefd[0]);
+        exit(0);
+    } else{
+        close(pipefd[0]);
+        for(int i = 0; i < argc; i++){
+            write(pipefd[1], argv[i],strlen(argv[i]));
+            write(pipefd[1],"\n", 1);
+        }
+        close(pipefd[1]);
+        int status;
+        wait(&status);
+        exit(0);
     }
 }
