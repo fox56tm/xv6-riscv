@@ -13,10 +13,9 @@ int main(int argc, char* argv[]){
 
     if(new_p == 0){
         close(pipefd[1]);
-        char buff[1024];
-        for(int i = 0; i <= argc; i++){
-            read(pipefd[0], buff,strlen(argv[i]));
-            printf("%s", buff);
+        char c;
+        while (read(pipefd[0], &c, 1) > 0) {
+            write(1, &c, 1);
         }
         close(pipefd[0]);
         exit(0);
