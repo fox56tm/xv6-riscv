@@ -16,7 +16,7 @@ int main(int argc, char *argv[]){
         pause(100);
         exit(0);
     }
-    else {
+    else {  
         printf("child id: %d, parent id: %d\n", p1, getpid());
         //scenario a
         if(strcmp(argv[1], "a") == 0){
