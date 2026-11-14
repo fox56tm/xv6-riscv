@@ -10,6 +10,9 @@ struct sleeplock;
 struct stat;
 struct superblock;
 
+//devs.c 
+void devinit(void);
+
 // bio.c
 void            binit(void);
 struct buf*     bread(uint, uint);
