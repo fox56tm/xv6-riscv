@@ -16,7 +16,9 @@
 // 80000000 -- entry.S, then kernel text and data
 // end -- start of kernel page allocation area
 // PHYSTOP -- end RAM used by the kernel
-
+//qemu RTC registers address
+#define RTC_LOW  0x101000L
+#define RTC_HIGH (RTC_LOW + 4)
 // qemu puts UART registers here in physical memory.
 #define UART0     0x10000000L
 #define UART0_IRQ 10
